@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mqtt/mqtt.iml" filepath="$PROJECT_DIR$/mqtt/mqtt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/twitterclient/twitterclient.iml" filepath="$PROJECT_DIR$/twitterclient/twitterclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/twittersentimentanalysis.iml" filepath="$PROJECT_DIR$/twittersentimentanalysis.iml" />
+    </modules>
+  </component>
+</project>
