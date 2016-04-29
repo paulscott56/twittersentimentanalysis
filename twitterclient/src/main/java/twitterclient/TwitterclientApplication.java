@@ -3,6 +3,7 @@ package twitterclient;
 import com.ibm.watson.developer_cloud.alchemy.v1.AlchemyLanguage;
 import com.ibm.watson.developer_cloud.alchemy.v1.model.DocumentSentiment;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -36,6 +37,9 @@ public class TwitterclientApplication {
 	@Autowired
 	private TweetRepo repo;
 
+	@Value("${mqtt.host}")
+	private String mqttHost;
+
 	public static void main(String[] args) {
 		SpringApplication.run(TwitterclientApplication.class, args);
 	}
@@ -48,7 +52,7 @@ public class TwitterclientApplication {
 	@Bean
 	public MessageProducer inbound() {
 		MqttPahoMessageDrivenChannelAdapter adapter =
-				new MqttPahoMessageDrivenChannelAdapter("tcp://localhost:1883", "testClient",
+				new MqttPahoMessageDrivenChannelAdapter(mqttHost, "testClient",
 						"tweets/dstv");
 		adapter.setCompletionTimeout(5000);
 		adapter.setConverter(new DefaultPahoMessageConverter());

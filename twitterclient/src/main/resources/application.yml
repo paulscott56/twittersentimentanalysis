@@ -4,3 +4,31 @@ server:
 logging:
   level:
     org.springframework.security: DEBUG
+
+twitter:
+  consumerKey: so5cCgtLyhRoTCBWHA3eZ99xR
+  consumerSecret: Q1TbhbxF7eC4CXIJ8OJbt629U7DzFYB9pQB7wdWO1z3xbX9bqi
+spring:
+   data:
+      mongodb.host: localhost
+      mongodb.port: 27017
+      mongodb.uri: mongodb://localhost/mqtt
+      mongodb.database: mqtt
+      mongo.repositories.enabled: true
+      mongo.username:
+      mongo.password:
+---
+spring:
+  profiles: docker
+  data:
+    mongodb.host: ${mongdb}
+    mongodb.port: ${mongdb_port}
+    mongodb.uri: ${mongdb_uri}
+    mongodb.database: ${database}
+    mongo.repositories.enabled: true
+    mongo.username:
+    mongo.password:
+    initialize: true
+
+mqtt:
+  host: tcp://${mosquitto_host}:1883
