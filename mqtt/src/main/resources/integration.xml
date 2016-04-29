@@ -28,7 +28,7 @@
                                        client-id="spring-foo-1"
                                        client-factory="clientFactory"
                                        auto-startup="true"
-                                       url="tcp://localhost:1883"
+                                       url="tcp://mosquitto:1883"
                                        default-qos="0"
                                        default-retained="true"
                                        default-topic="tweets/dstv" />
@@ -40,7 +40,7 @@
                                              client-id="spring-foo-2"
                                              client-factory="clientFactory"
                                              auto-startup="true"
-                                             url="tcp://localhost:1883"
+                                             url="tcp://mosquitto:1883"
                                              topics="inbound/#"
                                              send-timeout="123" />
 

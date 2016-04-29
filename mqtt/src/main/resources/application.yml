@@ -1,0 +1,10 @@
+server:
+  port: 8900
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+twitter:
+  consumerKey: so5cCgtLyhRoTCBWHA3eZ99xR
+  consumerSecret: Q1TbhbxF7eC4CXIJ8OJbt629U7DzFYB9pQB7wdWO1z3xbX9bqi

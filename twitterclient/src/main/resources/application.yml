@@ -21,14 +21,14 @@ spring:
 spring:
   profiles: docker
   data:
-    mongodb.host: ${mongdb}
-    mongodb.port: ${mongdb_port}
-    mongodb.uri: ${mongdb_uri}
-    mongodb.database: ${database}
+    mongodb.host: mongodb
+    mongodb.port: 27017
+    mongodb.uri: mongodb://mongodb/mqtt
+    mongodb.database: mqtt
     mongo.repositories.enabled: true
     mongo.username:
     mongo.password:
     initialize: true
 
 mqtt:
-  host: tcp://${mosquitto_host}:1883
+  host: tcp://mosquitto:1883

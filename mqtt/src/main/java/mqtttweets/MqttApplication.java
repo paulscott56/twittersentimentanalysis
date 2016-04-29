@@ -1,13 +1,14 @@
 package mqtttweets;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.core.env.Environment;
 import org.springframework.integration.mqtt.core.DefaultMqttPahoClientFactory;
-import org.springframework.social.oauth2.OAuth2Operations;
-import org.springframework.social.oauth2.OAuth2Template;
 import org.springframework.social.twitter.api.Twitter;
 import org.springframework.social.twitter.api.impl.TwitterTemplate;
 
@@ -16,11 +17,15 @@ import java.util.Date;
 
 @Configuration
 @ImportResource("/integration.xml")
+@EnableAutoConfiguration
+@EnableConfigurationProperties
+@SpringBootApplication
 public class MqttApplication {
 
-	private String consumerKey = "so5cCgtLyhRoTCBWHA3eZ99xR";
+    private String consumerKey = "so5cCgtLyhRoTCBWHA3eZ99xR";
 
-	private String consumerSecret = "Q1TbhbxF7eC4CXIJ8OJbt629U7DzFYB9pQB7wdWO1z3xbX9bqi";
+    private String consumerSecret = "Q1TbhbxF7eC4CXIJ8OJbt629U7DzFYB9pQB7wdWO1z3xbX9bqi";
+
 
 	public static void main(String[] args) {
 		new AnnotationConfigApplicationContext(MqttApplication.class);
