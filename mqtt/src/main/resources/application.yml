@@ -5,6 +5,14 @@ logging:
   level:
     org.springframework.security: DEBUG
 
+
+mqtt:
+  brokerURL: "tcp://197.80.203.63:1883"
+  inbound: "/inTopic/#"
+  outbound: "/outTopic"
+  twitter: "tweets/#"
+
 twitter:
-  consumerKey: so5cCgtLyhRoTCBWHA3eZ99xR
-  consumerSecret: Q1TbhbxF7eC4CXIJ8OJbt629U7DzFYB9pQB7wdWO1z3xbX9bqi
+  consumerkey: so5cCgtLyhRoTCBWHA3eZ99xR
+  consumersecret: Q1TbhbxF7eC4CXIJ8OJbt629U7DzFYB9pQB7wdWO1z3xbX9bqi
+  clientId: 15775653
