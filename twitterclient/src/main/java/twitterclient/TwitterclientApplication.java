@@ -37,9 +37,6 @@ public class TwitterclientApplication {
 	@Autowired
 	private TweetRepo repo;
 
-	@Value("${mqtt.host}")
-	private String mqttHost;
-
 	public static void main(String[] args) {
 		SpringApplication.run(TwitterclientApplication.class, args);
 	}
@@ -52,7 +49,7 @@ public class TwitterclientApplication {
 	@Bean
 	public MessageProducer inbound() {
 		MqttPahoMessageDrivenChannelAdapter adapter =
-				new MqttPahoMessageDrivenChannelAdapter(mqttHost, "testClient",
+				new MqttPahoMessageDrivenChannelAdapter("tcp://197.80.203.63:1883", "testClient",
 						"tweets/dstv");
 		adapter.setCompletionTimeout(5000);
 		adapter.setConverter(new DefaultPahoMessageConverter());

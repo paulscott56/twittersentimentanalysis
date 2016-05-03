@@ -31,4 +31,4 @@ spring:
     initialize: true
 
 mqtt:
-  host: tcp://mosquitto:1883
+  host: tcp://197.80.203.63:1883
